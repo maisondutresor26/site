@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomeHero from '../components/hero/HomeHero.astro';
+import Welcome from '../components/home/Welcome.astro';
+import About from '../components/home/About.astro';
+import RoomPreview from '../components/home/RoomPreview.astro';
+import Services from '../components/home/Services.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import CTA from '../components/home/CTA.astro';
+---
+
+<Layout 
+  title="Accueil" 
+  description="Bienvenue au Riad Maison du Trésor à Marrakech, un havre de paix au cœur de la médina. Découvrez l’hospitalité marocaine authentique."
+>
+  <HomeHero />
+  <Welcome />
+  <About />
+  <RoomPreview />
+  <Services />
+  <Testimonials />
+  <CTA />
+</Layout>

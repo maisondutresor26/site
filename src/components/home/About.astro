@@ -1,0 +1,55 @@
+---
+import riad1Src from '../../assets/notre-riad-hp/riad-1.jpg';
+import riad2Src from '../../assets/notre-riad-hp/riad-2.jpg';
+import riad3Src from '../../assets/notre-riad-hp/riad-3.jpg';
+import riad4Src from '../../assets/notre-riad-hp/riad-4.jpg';
+---
+
+<section id="about" class="section-padding bg-sable-50">
+  <div class="container mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="section-title mx-auto">Notre Riad</h2>
+      <p class="max-w-2xl mx-auto text-lg">Découvrez l'histoire et les valeurs qui font de notre établissement un lieu unique à Marrakech</p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1 fade-in-up">
+        <div class="grid grid-cols-2 gap-4">
+          <img 
+            src={riad1Src.src}
+            alt="Architecture du Riad" 
+            class="rounded-lg shadow-md h-48 w-full object-cover"
+          />
+          <img 
+            src={riad2Src.src}           
+            alt="Détail de décoration marocaine" 
+            class="rounded-lg shadow-md h-48 w-full object-cover"
+          />
+          <img 
+            src={riad3Src.src}
+            alt="Salon marocain" 
+            class="rounded-lg shadow-md h-48 w-full object-cover"
+          />
+          <img 
+          src={riad4Src.src}
+            alt="Terrasse du Riad" 
+            class="rounded-lg shadow-md h-48 w-full object-cover"
+          />
+        </div>
+      </div>
+      
+      <div class="order-1 lg:order-2 fade-in-up">
+       <h3 class="text-2xl font-serif mb-4 text-bleu-600">Vivez l’authenticité d’un riad marocain rénové</h3>
+<p class="mb-4">
+  Au coeur de Marrakech, notre riad "La Maison Du Trésor" allie charme traditionnel et confort moderne pour vous offrir un séjour chaleureux et authentique.
+</p>
+<p class="mb-4">
+  Découvrez un patio lumineux avec une fontaine apaisante, entouré de zelliges artisanaux, de boiseries finement travaillées et d’un tadelakt aux teintes chaudes qui racontent l’art marocain.
+</p>
+<p class="mb-6">
+  Notre équipe locale passionnée vous réserve un accueil sincère et vous guide vers les trésors cachés de Marrakech, loin des sentiers battus.
+</p>
+      </div>
+    </div>
+  </div>
+</section>

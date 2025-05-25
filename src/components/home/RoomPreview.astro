@@ -1,0 +1,89 @@
+---
+import blueRoomSrc from '../../assets/notre-riad-hp/riad-3.jpg'
+import whiteRoomSrc from '../../assets/rooms/chambre-blanche-1.jpg';
+import yellowRoomSrc from '../../assets/rooms/chambre-jaune-1.jpg';
+
+const rooms = [
+  {
+    id: 'blue',
+    name: 'Chambre Blue',
+    description: 'Chambre cosy avec lit double, idéale pour un séjour romantique ou une escapade détente.',
+    image: blueRoomSrc.src,
+    price: 110,
+    features: ['Lit double confortable', 'Ambiance apaisante', 'Parfaite pour couples']
+  },
+  {
+    id: 'blanche',
+    name: 'Chambre Blanche',
+    description: 'Chambre lumineuse avec lit double et terrasse privée pour savourer le calme de la médina.',
+    image: whiteRoomSrc.src,
+    price: 130,
+    features: ['Terrasse privée', 'Lit double', 'Lumière naturelle']
+  },
+  {
+    id: 'jaune',
+    name: 'Chambre Jaune',
+    description: 'Chambre ensoleillée avec lit double, située à deux pas de la piscine pour un accès facile.',
+    image: yellowRoomSrc.src,
+    price: 125,
+    features: ['Proximité piscine', 'Lit double confortable', 'Décoration chaleureuse']
+  }
+]
+---
+
+<section id="rooms-preview" class="section-padding bg-white">
+  <div class="container mx-auto">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="section-title mx-auto">Nos Chambres</h2>
+      <p class="max-w-3xl mx-auto text-lg">Chaque chambre reflète l’âme du Maroc, mêlant savoir-faire artisanal, confort moderne et atmosphère apaisante pour un séjour unique au cœur de Marrakech.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {rooms.map((room, index) => (
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 fade-in-up" style={`--delay: ${index + 2}`}>
+          <div class="relative overflow-hidden h-64">
+            <img 
+              src={room.image} 
+              alt={room.name} 
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute bottom-0 left-0 bg-ocre-400 text-white p-2 bg-[#dfbc6f] text-[12px]">
+              À partir de {room.price}€ / nuit
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <h3 class="text-xl font-serif font-medium mb-2">{room.name}</h3>
+            <p class="text-gray-600 mb-4">{room.description}</p>
+            
+            <ul class="mb-6 space-y-2">
+              {room.features.map(feature => (
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-ocre-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            
+            <div class="flex justify-between items-center">
+              <a href={`/chambres#${room.id}`} class="text-ocre-500 hover:text-ocre-600 font-medium">
+                En savoir plus
+              </a>
+              <a href="/reservation" class="btn btn-outline text-sm py-2 px-4">
+                Réserver
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12 fade-in-up">
+      <a href="/chambres" class="btn btn-primary">
+        Voir toutes nos chambres
+      </a>
+    </div>
+  </div>
+</section>

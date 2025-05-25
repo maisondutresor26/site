@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'Facebook', url: 'https://facebook.com', icon: 'facebook' },
+  { name: 'Instagram', url: 'https://instagram.com', icon: 'instagram' },
+  { name: 'TripAdvisor', url: 'https://tripadvisor.com', icon: 'tripadvisor' },
+  {name:'Booking', url:'https://booking.com', icon:'booking'}
+];
+
+const footerLinks = [
+  { title: 'Navigation', links: [
+    { label: 'Accueil', href: '/' },
+    { label: 'Chambres', href: '/chambres' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Réservation', href: '/reservation' },
+  ]},
+  { title: 'Informations', links: [
+    { label: 'À propos', href: '/#about' },
+    { label: 'FAQ', href: '/contact#faq' },
+    { label: 'Mentions légales', href: '/mentions-legales' },
+    { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
+  ]},
+  { title: 'Contact', links: [
+    { label: 'adresse@email.com', href: 'mailto:adresse@email.com' },
+    { label: '+212 5 24 XX XX XX', href: 'tel:+2125244XXXX' },
+    { label: 'Derb XYZ, Médina, Marrakech', href: '/contact' },
+  ]},
+];
+---
+
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Logo et description -->
+      <div class="lg:col-span-1">
+        <a href="/" class="text-2xl font-serif font-bold mb-4 inline-block">
+          La Maison Du Trésor
+        </a>
+        <p class="text-gray-400 mt-4">
+          Découvrez notre Riad traditionnel au cœur de Marrakech, un havre de paix alliant authenticité marocaine et confort moderne pour un séjour inoubliable.
+        </p>
+        <div class="flex space-x-4 mt-6 items-center">
+          {socialLinks.map(social => (
+            <a href={social.url} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ocre-400 transition-colors duration-300">
+              {social.icon === 'facebook' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                </svg>
+              )}
+              {social.icon === 'instagram' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              )}
+              {social.icon === 'tripadvisor' && (
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M20 6.009h-2.829C15.211 4.675 12.813 4 10 4s-5.212.675-7.171 2.009H0c.428.42.827 1.34.993 2.04A4.954 4.954 0 0 0 0 11.008c0 2.757 2.243 5 5 5a4.97 4.97 0 0 0 3.423-1.375L10 17l1.577-2.366A4.97 4.97 0 0 0 15 16.01c2.757 0 5-2.243 5-5 0-1.112-.377-2.13-.993-2.96.166-.7.565-1.62.993-2.04zm-15 8.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zm5-3.4a5.008 5.008 0 0 0-4.009-4.9C7.195 5.704 8.53 5.5 10 5.5s2.805.204 4.009.61A5.008 5.008 0 0 0 10 11.008zm5 3.4c-1.875 0-3.4-1.525-3.4-3.4s1.525-3.4 3.4-3.4 3.4 1.525 3.4 3.4-1.525 3.4-3.4 3.4zM5 8.86c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3zm10-2.791c-1.185 0-2.15.964-2.15 2.15s.965 2.15 2.15 2.15 2.15-.964 2.15-2.15-.965-2.15-2.15-2.15zm0 2.791a.65.65 0 1 1 0-1.3.65.65 0 0 1 0 1.3z"/>
+</svg>
+              )}
+              {
+                social.icon === 'booking' && (
+                  <span class="font-bold text-[24px]">B.</span>
+                )
+              }
+              <span class="sr-only">{social.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Colonnes de liens -->
+      {footerLinks.map(column => (
+        <div>
+          <h3 class="text-lg font-medium mb-4">{column.title}</h3>
+          <ul class="space-y-2">
+            {column.links.map(link => (
+              <li>
+                <a href={link.href} class="text-gray-400 hover:text-ocre-400 transition-colors duration-300">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    
+    <div class="border-t border-gray-800 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm">
+          &copy; {currentYear} Riad Marrakech. Tous droits réservés.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

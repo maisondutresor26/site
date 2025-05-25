@@ -1,0 +1,106 @@
+---
+---
+
+<section class="py-16 bg-navy-50">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto bg-white shadow-luxury p-8 md:p-12">
+      <div class="text-center mb-8">
+        <h2 class="section-title">Newsletter</h2>
+        <p class="text-lg text-gray-700">
+          Inscrivez-vous à notre newsletter pour recevoir nos offres spéciales et découvrir nos nouveaux services
+        </p>
+      </div>
+
+      <form id="newsletter-form" class="max-w-xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label for="firstname" class="block text-sm font-medium text-gray-700 mb-1">
+              Prénom
+            </label>
+            <input 
+              type="text" 
+              id="firstname" 
+              name="firstname" 
+              class="luxury-input"
+              required
+            />
+          </div>
+          <div>
+            <label for="lastname" class="block text-sm font-medium text-gray-700 mb-1">
+              Nom
+            </label>
+            <input 
+              type="text" 
+              id="lastname" 
+              name="lastname" 
+              class="luxury-input"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+            Email
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="luxury-input"
+            required
+          />
+        </div>
+
+        <div class="mb-6">
+          <label class="flex items-start">
+            <input 
+              type="checkbox" 
+              name="consent" 
+              required 
+              class="mt-1 text-gold-500 focus:ring-gold-500 border-gray-300 rounded"
+            />
+            <span class="ml-2 text-sm text-gray-600">
+              J'accepte de recevoir la newsletter et les offres promotionnelles du Riad Marrakech. 
+              Je peux me désinscrire à tout moment. Pour plus d'informations, consultez notre 
+              <a href="/politique-confidentialite" class="text-gold-500 hover:text-gold-600">politique de confidentialité</a>.
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">
+          S'inscrire à la newsletter
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Inscription en cours...';
+      
+      // Simulate form submission
+      setTimeout(() => {
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="text-xl font-medium mb-2">Merci pour votre inscription !</h3>
+            <p class="text-gray-600">
+              Vous recevrez bientôt nos actualités et offres spéciales.
+            </p>
+          </div>
+        `;
+      }, 1500);
+    }
+  });
+</script>

@@ -1,0 +1,228 @@
+---
+---
+
+<form class="bg-white rounded-lg shadow-md p-6 md:p-8" id="reservation-form">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="form-group">
+      <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">
+        Prénom <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="first-name" 
+        name="first-name" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+        placeholder="Votre prénom"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">
+        Nom <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="last-name" 
+        name="last-name" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+        placeholder="Votre nom"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+        Email <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+        placeholder="votre@email.com"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+        Téléphone <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+        placeholder="+33 X XX XX XX XX"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="room-type" class="block text-sm font-medium text-gray-700 mb-1">
+        Type de chambre <span class="text-terracotta-500">*</span>
+      </label>
+      <select 
+        id="room-type" 
+        name="room-type" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+      >
+        <option value="">Sélectionnez une chambre</option>
+        <option value="suite-jasmin">Suite Jasmin</option>
+        <option value="chambre-menthe">Chambre Menthe</option>
+        <option value="suite-safran">Suite Safran</option>
+        <option value="chambre-rose">Chambre Rose</option>
+        <option value="suite-royale">Suite Royale</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">
+        Nombre de personnes <span class="text-terracotta-500">*</span>
+      </label>
+      <select 
+        id="guests" 
+        name="guests" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+      >
+        <option value="1">1 personne</option>
+        <option value="2" selected>2 personnes</option>
+        <option value="3">3 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="more">Plus de 4 personnes</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="check-in" class="block text-sm font-medium text-gray-700 mb-1">
+        Date d'arrivée <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="date" 
+        id="check-in" 
+        name="check-in" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="check-out" class="block text-sm font-medium text-gray-700 mb-1">
+        Date de départ <span class="text-terracotta-500">*</span>
+      </label>
+      <input 
+        type="date" 
+        id="check-out" 
+        name="check-out" 
+        required 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+      />
+    </div>
+    
+    <div class="form-group md:col-span-2">
+      <label for="special-requests" class="block text-sm font-medium text-gray-700 mb-1">
+        Demandes spéciales
+      </label>
+      <textarea 
+        id="special-requests" 
+        name="special-requests" 
+        rows="4" 
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-ocre-400 focus:border-ocre-400 transition-colors"
+        placeholder="Informations supplémentaires ou demandes particulières..."
+      ></textarea>
+    </div>
+  </div>
+  
+  <div class="mt-6">
+    <label class="flex items-start">
+      <input type="checkbox" name="terms" required class="mt-1 text-ocre-400 focus:ring-ocre-400 border-gray-300 rounded">
+      <span class="ml-2 text-sm text-gray-600">
+        J'accepte les <a href="/politique-confidentialite" class="text-ocre-500 hover:text-ocre-600">politique de confidentialité</a> <span class="text-terracotta-500">*</span>
+      </span>
+    </label>
+  </div>
+  
+  <div class="mt-6">
+    <button type="submit" class="btn btn-primary w-full">
+      Demander une réservation
+    </button>
+  </div>
+  
+  <p class="mt-4 text-sm text-gray-600 italic">
+    <span class="text-terracotta-500">*</span> Champs obligatoires. Cette demande ne constitue pas une réservation définitive. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité et finaliser votre réservation.
+  </p>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reservation-form');
+    
+    // Définir les dates minimales pour check-in (aujourd'hui) et check-out (demain)
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    const formatDate = (date) => {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    };
+    
+    const checkInInput = document.getElementById('check-in');
+    const checkOutInput = document.getElementById('check-out');
+    
+    if (checkInInput && checkOutInput) {
+      checkInInput.min = formatDate(today);
+      checkOutInput.min = formatDate(tomorrow);
+      
+      // Mettre à jour la date minimale de checkout lorsque checkin change
+      checkInInput.addEventListener('change', function() {
+        const selectedDate = new Date(this.value);
+        const nextDay = new Date(selectedDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        checkOutInput.min = formatDate(nextDay);
+        
+        // Si la date de départ est antérieure à la nouvelle date d'arrivée + 1 jour, la réinitialiser
+        if (new Date(checkOutInput.value) <= selectedDate) {
+          checkOutInput.value = formatDate(nextDay);
+        }
+      });
+    }
+    
+    form?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simuler l'envoi du formulaire
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
+        
+        // Simuler un délai de traitement
+        setTimeout(() => {
+          // Réinitialiser le formulaire
+          form.reset();
+          
+          // Afficher un message de succès
+          const successMessage = document.createElement('div');
+          successMessage.className = 'mt-4 p-4 bg-green-100 text-green-800 rounded-md';
+          successMessage.textContent = 'Votre demande de réservation a été envoyée avec succès. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité.';
+          form.appendChild(successMessage);
+          
+          // Réactiver le bouton
+          submitButton.disabled = false;
+          submitButton.textContent = 'Demander une réservation';
+          
+          // Supprimer le message après un certain temps
+          setTimeout(() => {
+            successMessage.remove();
+          }, 5000);
+        }, 1500);
+      }
+    });
+  });
+</script>

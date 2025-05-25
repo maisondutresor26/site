@@ -1,0 +1,35 @@
+---
+import imgSrc from '../../assets/notre-riad-hp/riad-1.jpg'
+---
+
+<section id="welcome" class="section-padding bg-white">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-in-up">
+        <h2 class="section-title">Bienvenue au Riad Marrakech</h2>
+       <p class="text-lg mb-6">
+  Niché au coeur de la médina de Marrakech, notre riad "La Maison Du Trésor" vous invite à vivre un séjour unique alliant charme traditionnel et confort moderne.
+</p>
+<p class="mb-6">
+  Poussez la porte et découvrez un oasis de calme : patios baignés de lumière, zelliges artisanaux, fontaines apaisantes et atmosphère chaleureuse loin de l’agitation des souks.
+</p>
+<p class="mb-8">
+  Idéal pour explorer les merveilles de Marrakech ou vous ressourcer au soleil, notre équipe dévouée s’engage à faire de votre séjour une expérience marocaine authentique et inoubliable.
+</p>
+
+        <a href="/#about" class="btn btn-primary">En savoir plus</a>
+      </div>
+      
+      <div class="relative fade-in-up">
+        <img 
+          src={imgSrc.src} 
+          alt="Patio intérieur du Riad" 
+          class="w-full h-auto rounded-lg shadow-xl"
+        />
+        <!-- Élément décoratif -->
+        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-ocre-400 rounded-lg -z-10"></div>
+        <div class="absolute -top-6 -left-6 w-24 h-24 border-2 border-bleu-500 rounded-lg -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>

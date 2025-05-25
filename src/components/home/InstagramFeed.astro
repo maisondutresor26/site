@@ -1,0 +1,71 @@
+---
+const instagramPosts = [
+  {
+    image: 'https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    caption: 'Notre patio traditionnel 🌺 #RiadMarrakech',
+    likes: 124
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1582582494705-f8ce0b0c24f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    caption: 'Petit-déjeuner sur la terrasse ☀️ #MarrakechLife',
+    likes: 98
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    caption: 'Coucher de soleil depuis notre terrasse 🌅 #MarrakechMoments',
+    likes: 156
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    caption: 'Détails architecturaux de notre Riad ✨ #MarocArchitecture',
+    likes: 203
+  }
+];
+---
+
+<section class="py-16 bg-cream-50">
+  <div class="container mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="section-title">Suivez-nous sur Instagram</h2>
+      <p class="text-lg text-gray-700">Découvrez notre quotidien et partagez vos moments avec #RiadMarrakech</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {instagramPosts.map(post => (
+        <div class="luxury-card overflow-hidden group">
+          <div class="relative">
+            <img 
+              src={post.image} 
+              alt={post.caption}
+              class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+              <div class="text-white text-center">
+                <div class="flex items-center justify-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  <span>{post.likes}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-gray-700 text-sm">{post.caption}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-8">
+      <a 
+        href="https://instagram.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="btn btn-outline"
+      >
+        Voir plus sur Instagram
+      </a>
+    </div>
+  </div>
+</section>

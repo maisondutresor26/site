@@ -1,0 +1,70 @@
+---
+import heroSrc from '../../assets/riad-home-hero.png'
+---
+
+<section class="relative h-screen flex items-center justify-center text-white overflow-hidden bg-navy-900">
+  <!-- Image d'arrière-plan -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={heroSrc.src}
+      alt="Riad de Marrakech vue de la piscine et cour intérieure" 
+      class="w-full h-full object-cover"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+  </div>
+  
+  <!-- Contenu -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold mb-6 fade-in-up">
+     La Maison Du Trésor
+    </h1>
+    <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-10 fade-in-up">
+       Éveillez vos sens dans la médina, un riad de charme mêlant authenticité marocaine et confort absolu
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 fade-in-up">
+      <a href="/chambres" class="btn btn-primary min-w-48 text-lg">
+        Découvrir nos chambres
+      </a>
+      <a href="/reservation" class="btn btn-outline min-w-48 text-lg">
+        Réserver maintenant
+      </a>
+    </div>
+  </div>
+  
+  <!-- Élément décoratif -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
+  
+  <!-- Flèche de défilement -->
+  <a href="#welcome" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </a>
+</section>
+
+<style>
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: calc(var(--delay, 0) * 0.2s);
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  h1 {
+    --delay: 2;
+  }
+  
+  p {
+    --delay: 4;
+  }
+  
+  .fade-in-up + .fade-in-up {
+    --delay: 6;
+  }
+</style>

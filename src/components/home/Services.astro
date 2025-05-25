@@ -1,0 +1,96 @@
+---
+const services = [
+  {
+    icon: 'pool',
+    title: 'Piscine',
+    description: 'Détendez-vous dans notre piscine au cœur du patio, idéale pour se rafraîchir après une journée dans les souks de Marrakech.'
+  },
+  {
+    icon: 'spa',
+    title: 'Hammam & Spa',
+    description: 'Vivez un moment de bien-être absolu avec notre hammam traditionnel et nos soins à base d’huiles essentielles marocaines.'
+  },
+  {
+    icon: 'restaurant',
+    title: 'Restaurant',
+    description: 'Savourez une cuisine marocaine revisitée aux accents méditerranéens, préparée chaque jour avec des produits frais du marché.'
+  },
+  {
+    icon: 'wifi',
+    title: 'Wi-Fi Gratuit',
+    description: 'Connectivité assurée avec notre Wi-Fi haut débit, disponible dans toutes les chambres et les espaces communs.'
+  },
+  {
+    icon: 'breakfast',
+    title: 'Petit-déjeuner',
+    description: 'Démarrez votre matinée avec un petit-déjeuner marocain copieux, servi sur notre terrasse baignée de soleil.'
+  },
+  {
+    icon: 'excursion',
+    title: 'Excursions',
+    description: 'Partez à la découverte du Maroc grâce à nos excursions personnalisées vers le désert, l’Atlas ou les trésors cachés de la région.'
+  }
+];
+
+---
+
+<section id="services-preview" class="section-padding bg-bleu-50">
+  <div class="container mx-auto">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="section-title mx-auto">Nos Services</h2>
+      <p class="max-w-2xl mx-auto text-lg">Découvrez nos services authentiques et attentifs qui feront de votre séjour une expérience inoubliable à Marrakech.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 fade-in-up" style={`--delay: ${index + 2}`}>
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 mr-4">
+              {service.icon === 'pool' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.5S6 3 12 3s9 6.5 9 6.5-3 6.5-9 6.5-9-6.5-9-6.5z" />
+                </svg>
+              )}
+              {service.icon === 'spa' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m2.879 2.879l-2.879-2.879M12 12l-7 7" />
+                </svg>
+              )}
+              {service.icon === 'restaurant' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+              {service.icon === 'wifi' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.246-3.905 14.15 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                </svg>
+              )}
+              {service.icon === 'breakfast' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+              {service.icon === 'excursion' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-bleu-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              )}
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-medium mb-2">{service.title}</h3>
+              <p class="text-gray-600">{service.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12 fade-in-up">
+      <a href="/services" class="btn btn-primary">
+        Découvrir tous nos services
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+---
+const testimonials = [
+  {
+    name: 'Valérie FO',
+    origin: 'Paris, France',
+    image: 'https://images.unsplash.com/photo-1522098635833-216c03d81fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&q=80',
+    comment: "Emplacement parfait à 5 minutes de la place Jemaa El Fna.  Nouv avons pu visiter la ville et les souks tout à pied. Le personnel est très professionnel et à l'écoute de nos demandes.  Nous (2 couples) avons séjourné dans la suite (2 belles chambres avec un salon commun). Bon petit déjeuner (salé et sucré, vrai jus d'orange, tout fait maison).",
+    rating: 5
+  },
+  {
+    name: 'Matthias M',
+    origin: 'Madrid, Espagne',
+    image: 'https://images.unsplash.com/photo-1522098635833-216c03d81fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&q=80',
+    comment: "Vraiment un super endroit au coeur de Marrakech. Le personnel était super, toujours prêt à vous aider pour tout, de la réservation de manèges au partage d'informations sur les lieux. Les chambres étaient propres, le petit déjeuner était délicieux et l'emplacement était très calme, d'autant plus qu'il se trouve dans la médina. Je reviendrai!",
+    rating: 5
+  },
+  {
+    name: 'Nath Es',
+    origin: 'Bruxelles, Belgique',
+    image: 'https://images.unsplash.com/photo-1522098635833-216c03d81fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&q=80',
+    comment: "Excellent séjour dans ce riad. Mustafa et son équipe est aux petits soins à l'intérieur et vous conseille pour organiser vos activités sur Marrakech. Un rooftop à couper le souffle avec vue à 360 sur Marrakech et les montagnes",
+    rating: 5
+  }
+];
+---
+
+<section class="section-padding bg-terracotta-50 relative overflow-hidden">
+  <!-- Motif décoratif -->
+  <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+    <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNNTkgMEg2MHYxMGgtOVYwaDh6TTAgMGgxMHY5SDBWMHpNNTAgMGgxMHY5SDUwVjB6TTEwIDBoMTB2OUgxMFYwek0yMCAwaDEwdjlIMjBWMHpNMzAgMGgxMHY5SDMwVjB6TTQwIDBoMTB2OUg0MFYwek0wIDEwaDEwdjlIMHYtOXpNNTAgMTBoMTB2OUg1MHYtOXpNMTAgMTBoMTB2OUgxMHYtOXpNMjAgMTBoMTB2OUgyMHYtOXpNMzAgMTBoMTB2OUgzMHYtOXpNNDAgMTBoMTB2OUg0MHYtOXpNMCAyMGgxMHY5SDB2LTl6TTUwIDIwaDEwdjlINTB2LTl6TTEwIDIwaDEwdjlIMTB2LTl6TTIwIDIwaDEwdjlIMjB2LTl6TTMwIDIwaDEwdjlIMzB2LTl6TTQwIDIwaDEwdjlINDB2LTl6TTAgMzBoMTB2OUgwdi05ek01MCAzMGgxMHY5SDUwdi05ek0xMCAzMGgxMHY5SDEwdi05ek0yMCAzMGgxMHY5SDIwdi05ek0zMCAzMGgxMHY5SDMwdi05ek00MCAzMGgxMHY5SDQwdi05ek0wIDQwaDEwdjlIMHYtOXpNNTAgNDBoMTB2OUg1MHYtOXpNMTAgNDBoMTB2OUgxMHYtOXpNMjAgNDBoMTB2OUgyMHYtOXpNMzAgNDBoMTB2OUgzMHYtOXpNNDAgNDBoMTB2OUg0MHYtOXpNMCA1MGgxMHY5SDB2LTl6TTUwIDUwaDF2OUg1MHYtOXpNMTAgNTBoMTB2OUgxMHYtOXpNMjAgNTBoMTB2OUgyMHYtOXpNMzAgNTBoMTB2OUgzMHYtOXpNNDAgNTBoMTB2OUg0MHYtOXoiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPgo=')"></div>
+  </div>
+  
+  <div class="container mx-auto relative z-10">
+    <div class="text-center mb-12 fade-in-up">
+      <h2 class="section-title mx-auto">Ce que disent nos hôtes</h2>
+      <p class="max-w-2xl mx-auto text-lg">Des expériences authentiques racontées par ceux qui nous ont fait confiance</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 fade-in-up" style={`--delay: ${index + 2}`}>
+          <div class="flex items-center mb-4">
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.name} 
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+            />
+            <div>
+              <h3 class="font-medium text-medium">{testimonial.name}</h3>
+              
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span class={i < testimonial.rating ? "text-ocre-400" : "text-gray-300"}>★</span>
+            ))}
+          </div>
+          
+          <blockquote class="italic text-gray-700 mb-4">
+            "{testimonial.comment}"
+          </blockquote>
+        </div>
+      ))}
+    </div>
+    
+    <div class="flex justify-center items-center mt-12 bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto fade-in-up">
+      <div class="flex-shrink-0 mr-6 hidden md:block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-ocre-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="flex mb-4">
+          <div class="ml-4">
+            <p class="font-medium">Note moyenne sur TripAdvisor</p>
+            <div class="flex">
+              <span class="text-ocre-400 text-xl">★★★★★</span>
+              <span class="ml-2 text-lg font-medium">4.9/5</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.tripadvisor.fr/Hotel_Review-g293734-d19186515-Reviews-Maison_Du_Tresor-Marrakech_Marrakech_Safi.html" target="_blank" rel="noopener noreferrer" class="text-bleu-500 hover:text-bleu-600 font-medium flex items-center">
+          Voir tous les avis
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

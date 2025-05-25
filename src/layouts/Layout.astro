@@ -1,0 +1,156 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Découvrez notre Riad de charme au coeur de Marrakech pour un séjour authentique combinant tradition marocaine et confort moderne." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Primary Meta -->
+  <title>{title} | Riad Maison du Trésor Marrakech</title>
+  <meta name="title" content={`${title} | Riad Maison du Trésor Marrakech`} />
+  <meta name="description" content={description} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.riadmaisondutresor.com/" />
+  <meta property="og:title" content={`${title} | Riad Maison du Trésor Marrakech`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://www.riadmaisondutresor.com/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | Riad Maison du Trésor Marrakech`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://www.riadmaisondutresor.com/images/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+  <body class="font-sans text-gray-800 min-h-screen flex flex-col bg-cream-50">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <CookieBanner />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cream-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-wide;
+  }
+  
+  p {
+    @apply leading-relaxed font-light;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-sm transition-all duration-300 inline-block text-center font-medium tracking-wide shadow-luxury hover:shadow-luxury-lg transform hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-gold-400 hover:bg-gold-500 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-navy-500 hover:bg-navy-600 text-white;
+  }
+
+  .btn-outline {
+    @apply border-2 border-gold-400 text-gold-500 hover:bg-gold-400 hover:text-white;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif mb-6 relative inline-block tracking-wide;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-2/3 h-0.5 bg-gold-400;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .luxury-card {
+    @apply bg-white rounded-sm shadow-luxury hover:shadow-luxury-lg transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .luxury-input {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-sm focus:ring-2 focus:ring-gold-400 focus:border-gold-400 transition-colors bg-cream-50;
+  }
+
+  .luxury-select {
+    @apply luxury-input appearance-none bg-no-repeat bg-right pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 1.5rem;
+  }
+
+  /* Smooth fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Luxury hover effect */
+  .luxury-hover {
+    @apply transition-all duration-300 hover:shadow-luxury-lg transform hover:-translate-y-1;
+  }
+</style>
+
+<script>
+  // Animation au défilement
+  document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
