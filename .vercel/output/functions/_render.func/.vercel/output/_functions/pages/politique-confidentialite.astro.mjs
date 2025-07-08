@@ -1,0 +1,42 @@
+/* empty css                                    */
+import { a as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_B_M4XSTg.mjs';
+import 'kleur/colors';
+import { $ as $$Layout, c as contactInfo } from '../chunks/Layout_BFr3x2kt.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$PolitiqueConfidentialite = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Politique de Confidentialit\xE9", "description": "Politique de confidentialit\xE9 du Riad Marrakech - D\xE9couvrez comment nous prot\xE9geons vos donn\xE9es personnelles." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-burgundy-600 text-white"> <div class="container mx-auto"> <h1 class="text-4xl md:text-5xl font-serif mb-4">Politique de Confidentialité</h1> <p class="text-xl">Comment nous protégeons vos données personnelles</p> </div> </section> <section class="py-16"> <div class="container mx-auto"> <div class="max-w-3xl mx-auto prose prose-lg"> <h2>1. Collecte des données personnelles</h2> <p>
+Nous collectons les informations que vous nous fournissez directement, notamment :
+</p> <ul> <li>Nom et prénom</li> <li>Adresse email</li> <li>Numéro de téléphone</li> <li>Adresse postale</li> <li>Informations de paiement</li> <li>Préférences de séjour</li> </ul> <h2>2. Utilisation des données</h2> <p>
+Nous utilisons vos données personnelles pour :
+</p> <ul> <li>Gérer vos réservations</li> <li>Personnaliser votre expérience</li> <li>Communiquer avec vous</li> <li>Améliorer nos services</li> <li>Respecter nos obligations légales</li> </ul> <h2>3. Cookies</h2> <p>
+Notre site utilise des cookies pour améliorer votre expérience de navigation. Les cookies sont de petits fichiers texte stockés sur votre appareil qui nous aident à :
+</p> <ul> <li>Mémoriser vos préférences</li> <li>Comprendre comment vous utilisez notre site</li> <li>Améliorer nos services</li> <li>Personnaliser notre contenu</li> </ul> <h2>4. Partage des données</h2> <p>
+Nous ne vendons jamais vos données personnelles. Nous pouvons partager vos informations avec :
+</p> <ul> <li>Nos prestataires de services</li> <li>Nos partenaires commerciaux</li> <li>Les autorités légales si requis</li> </ul> <h2>5. Sécurité des données</h2> <p>
+Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données contre tout accès, modification, divulgation ou destruction non autorisés.
+</p> <h2>6. Nous contacter</h2> <p>
+Pour toute question concernant notre politique de confidentialité ou pour exercer vos droits, contactez-nous à :
+</p> <p>
+Email : ${contactInfo[2].content}<br>
+Téléphone : ${contactInfo[1].content}<br>
+Adresse : ${contactInfo[0].content} </p> <h2>8. Modifications</h2> <p>
+Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications entrent en vigueur dès leur publication sur le site.
+</p> <p class="text-sm text-gray-600 mt-8">
+Dernière mise à jour : 05/07/2025
+</p> </div> </div> </section> ` })}`;
+}, "C:/Users/pc/Desktop/riad-nico/project/src/pages/politique-confidentialite.astro", void 0);
+
+const $$file = "C:/Users/pc/Desktop/riad-nico/project/src/pages/politique-confidentialite.astro";
+const $$url = "/politique-confidentialite";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$PolitiqueConfidentialite,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

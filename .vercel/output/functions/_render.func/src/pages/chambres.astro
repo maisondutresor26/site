@@ -1,0 +1,565 @@
+---
+import Layout from '../layouts/Layout.astro';
+import imgSrc from '../assets/home-page-cta.jpg'
+
+import chambreBerbereSrc1 from '../assets/chambres/chambre-berbere/1.jpg'
+import chambreBerbereSrc2 from '../assets/chambres/chambre-berbere/2.jpg'
+import chambreBerbereSrc3 from '../assets/chambres/chambre-berbere/3.jpg'
+import chambreBerbereSrc4 from '../assets/chambres/chambre-berbere/4.jpg'
+/* import chambreBerbereSrc5 from '../assets/chambres/chambre-berbere/5.jpg' */
+
+import chambreBlancheSrc1 from '../assets/chambres/chambre-blanche/1.jpg'
+import chambreBlancheSrc2 from '../assets/chambres/chambre-blanche/2.jpg'
+import chambreBlancheSrc3 from '../assets/chambres/chambre-blanche/3.jpg'
+import chambreBlancheSrc4 from '../assets/chambres/chambre-blanche/4.jpg'
+/* import chambreBlancheSrc5 from '../assets/chambres/chambre-blanche/5.jpg'
+import chambreBlancheSrc6 from '../assets/chambres/chambre-blanche/6.jpg'
+import chambreBlancheSrc7 from '../assets/chambres/chambre-blanche/7.jpg'
+import chambreBlancheSrc8 from '../assets/chambres/chambre-blanche/8.jpg'
+import chambreBlancheSrc9 from '../assets/chambres/chambre-blanche/9.jpg'
+import chambreBlancheSrc10 from '../assets/chambres/chambre-blanche/10.jpg' */
+
+import chambreDoreeSrc1 from '../assets/chambres/chambre-doree/1.jpg'
+import chambreDoreeSrc2 from '../assets/chambres/chambre-doree/2.jpg'
+import chambreDoreeSrc3 from '../assets/chambres/chambre-doree/3.jpg'
+import chambreDoreeSrc4 from '../assets/chambres/chambre-doree/4.jpg'
+/* import chambreDoreeSrc5 from '../assets/chambres/chambre-doree/5.jpg'
+import chambreDoreeSrc6 from '../assets/chambres/chambre-doree/6.jpg'
+import chambreDoreeSrc7 from '../assets/chambres/chambre-doree/7.jpg' */
+
+import chambreJackpotSrc1 from '../assets/chambres/chambre-jackpot/1.jpg'
+import chambreJackpotSrc2 from '../assets/chambres/chambre-jackpot/2.jpg'
+import chambreJackpotSrc3 from '../assets/chambres/chambre-jackpot/3.jpg'
+import chambreJackpotSrc4 from '../assets/chambres/chambre-jackpot/4.jpg'
+/* import chambreJackpotSrc5 from '../assets/chambres/chambre-jackpot/5.jpg'
+import chambreJackpotSrc6 from '../assets/chambres/chambre-jackpot/6.jpg' */
+
+import chambreJauneSrc1 from '../assets/chambres/chambre-jaune/1.jpg'
+import chambreJauneSrc2 from '../assets/chambres/chambre-jaune/2.jpg'
+import chambreJauneSrc3 from '../assets/chambres/chambre-jaune/3.jpg'
+import chambreJauneSrc4 from '../assets/chambres/chambre-jaune/4.jpg'
+/* import chambreJauneSrc5 from '../assets/chambres/chambre-jaune/5.jpg'
+import chambreJauneSrc6 from '../assets/chambres/chambre-jaune/6.jpg'
+import chambreJauneSrc7 from '../assets/chambres/chambre-jaune/7.jpg' */
+
+import chambreRougeSrc1 from '../assets/chambres/chambre-rouge/1.jpg'
+import chambreRougeSrc2 from '../assets/chambres/chambre-rouge/2.jpg'
+import chambreRougeSrc3 from '../assets/chambres/chambre-rouge/3.jpg'
+import chambreRougeSrc4 from '../assets/chambres/chambre-rouge/4.jpg'
+/* import chambreRougeSrc5 from '../assets/chambres/chambre-rouge/5.jpg'
+import chambreRougeSrc6 from '../assets/chambres/chambre-rouge/6.jpg'
+import chambreRougeSrc7 from '../assets/chambres/chambre-rouge/7.jpg' */
+
+import chambreBleuSrc1 from '../assets/chambres/chambreBleu/1.jpg'
+import chambreBleuSrc2 from '../assets/chambres/chambreBleu/2.jpg'
+import chambreBleuSrc3 from '../assets/chambres/chambreBleu/3.jpg'
+import chambreBleuSrc4 from '../assets/chambres/chambreBleu/4.jpg'
+/* import chambreBleuSrc5 from '../assets/chambres/chambreBleu/5.jpg' */
+
+
+import suiteTresorSrc1 from '../assets/chambres/suite-tresor/1.jpg'
+import suiteTresorSrc2 from '../assets/chambres/suite-tresor/2.jpg'
+import suiteTresorSrc3 from '../assets/chambres/suite-tresor/3.jpg'
+import suiteTresorSrc4 from '../assets/chambres/suite-tresor/4.jpg'
+/* import suiteTresorSrc5 from '../assets/chambres/suite-tresor/5.jpg'
+import suiteTresorSrc6 from '../assets/chambres/suite-tresor/6.jpg'
+import suiteTresorSrc7 from '../assets/chambres/suite-tresor/7.jpg'
+import suiteTresorSrc8 from '../assets/chambres/suite-tresor/8.jpg'
+import suiteTresorSrc9 from '../assets/chambres/suite-tresor/9.jpg'
+import suiteTresorSrc10 from '../assets/chambres/suite-tresor/10.jpg'
+import suiteTresorSrc11 from '../assets/chambres/suite-tresor/11.jpg'
+import suiteTresorSrc12 from '../assets/chambres/suite-tresor/12.jpg'
+import suiteTresorSrc13 from '../assets/chambres/suite-tresor/13.jpg'
+import suiteTresorSrc14 from '../assets/chambres/suite-tresor/14.jpg'
+import suiteTresorSrc15 from '../assets/chambres/suite-tresor/15.jpg'
+import suiteTresorSrc16 from '../assets/chambres/suite-tresor/16.jpg'
+import suiteTresorSrc17 from '../assets/chambres/suite-tresor/17.jpg'
+import suiteTresorSrc18 from '../assets/chambres/suite-tresor/18.jpg'
+import suiteTresorSrc19 from '../assets/chambres/suite-tresor/19.jpg' */
+
+const rooms = [
+  {
+    id: 'tresor',
+    name: 'Suite Trésor (Exclusivité)',
+    description: 'Deux suites élégantes louées en exclusivité avec salon central, idéales pour les familles ou groupes.',
+    longDescription: 'La Suite Trésor offre deux chambres avec lits doubles, un salon central spacieux, et la possibilité d’ajouter un petit lit par chambre. Parfaite pour accueillir jusqu’à 6 personnes dans une atmosphère de raffinement et d’intimité.',
+    image: suiteTresorSrc1,
+    gallery: [
+     suiteTresorSrc2,
+     suiteTresorSrc3,
+     suiteTresorSrc4
+    ],
+    price: 300,
+    capacity: 'Jusqu’à 6 personnes',
+    size: '60m²',
+    amenities: [
+      'Deux lits doubles',
+      'Possibilité d’ajouter un lit supplémentaire par chambre',
+      'Salon central',
+      'Climatisation',
+      'WiFi gratuit',
+      'Coffre-fort',
+      'Minibar',
+      'TV écran plat'
+    ]
+  },
+  {
+    id: 'blue',
+    name: 'Chambre Bleue',
+    description: 'Chambre élégante avec lit double et décoration apaisante aux tons bleus.',
+    longDescription: 'La Chambre Bleue offre un espace cosy avec un lit double confortable. Idéale pour un séjour paisible au cœur de la médina.',
+    image: chambreBleuSrc1,
+    gallery: [
+chambreBleuSrc2,
+chambreBleuSrc3,
+chambreBleuSrc4
+    ],
+    price: 120,
+    capacity: '2 personnes',
+    size: '25m²',
+    amenities: [
+      'Lit double',
+      'Climatisation',
+      'WiFi gratuit',
+      'Coffre-fort'
+    ]
+  },
+  {
+    id: 'blanche',
+    name: 'Chambre Blanche',
+    description: 'Chambre lumineuse avec lit double et terrasse privée.',
+    longDescription: 'La Chambre Blanche combine confort et intimité avec son lit double et sa terrasse privée, idéale pour se détendre en toute tranquillité.',
+    image: chambreBlancheSrc1,
+    gallery: [
+chambreBlancheSrc2,
+chambreBlancheSrc3,
+chambreBlancheSrc4,
+    ],
+    price: 130,
+    capacity: '2 personnes',
+    size: '28m²',
+    amenities: [
+      'Lit double',
+      'Terrasse privée',
+      'Climatisation',
+      'WiFi gratuit',
+      'Coffre-fort'
+    ]
+  },
+  {
+    id: 'jaune',
+    name: 'Chambre Jaune',
+    description: 'Chambre chaleureuse avec lit double à côté de la piscine.',
+    longDescription: 'Située à proximité de la piscine, la Chambre Jaune offre un cadre lumineux et apaisant avec un lit double confortable et une décoration solaire.',
+    image: chambreJauneSrc1,
+    gallery: [
+     chambreJauneSrc2,
+     chambreJauneSrc3,
+     chambreJauneSrc4
+    ],
+    price: 130,
+    capacity: '2 personnes',
+    size: '25m²',
+    amenities: [
+      'Lit double',
+      'Proche de la piscine',
+      'Climatisation',
+      'WiFi gratuit'
+    ]
+  },
+  {
+    id: 'dore',
+    name: 'Chambre Dorée',
+    description: 'Chambre modulable avec lit double ou lits séparés, à deux pas de la piscine.',
+    longDescription: 'La Chambre Dorée offre une grande flexibilité avec son lit double transformable en deux lits séparés. Située juste à côté de la piscine, elle est parfaite pour un séjour relaxant.',
+    image: chambreDoreeSrc1,
+    gallery: [
+     chambreDoreeSrc2,
+     chambreDoreeSrc3,
+     chambreDoreeSrc4
+    ],
+    price: 130,
+    capacity: '2 personnes',
+    size: '25m²',
+    amenities: [
+      'Lit double ou lits séparés',
+      'Proche de la piscine',
+      'Climatisation',
+      'WiFi gratuit'
+    ]
+  },
+  {
+    id: 'berbere',
+    name: 'Chambre Berbère',
+    description: 'Chambre charmante avec lit double située sur la terrasse.',
+    longDescription: 'La Chambre Berbère est un havre de paix niché sur la terrasse, combinant charme traditionnel et confort avec un lit double et un accès direct à l’air libre.',
+    image: chambreBerbereSrc1,
+    gallery: [
+    chambreBerbereSrc2,
+    chambreBerbereSrc3,
+    chambreBerbereSrc4
+    ],
+    price: 125,
+    capacity: '2 personnes',
+    size: '24m²',
+    amenities: [
+      'Lit double',
+      'Située sur la terrasse',
+      'WiFi gratuit',
+      'Climatisation'
+    ]
+  },
+  {
+    id: 'jackpot',
+    name: 'Chambre Jackpot',
+    description: 'Chambre confortable avec lit double sur la terrasse.',
+    longDescription: 'La Chambre Jackpot propose un lit double dans un espace intime sur la terrasse, idéale pour une escapade romantique ou une pause au calme.',
+    image: chambreJackpotSrc1,
+    gallery: [
+      chambreJackpotSrc2,
+      chambreJackpotSrc3,
+      chambreJackpotSrc4,
+    ],
+    price: 125,
+    capacity: '2 personnes',
+    size: '24m²',
+    amenities: [
+      'Lit double',
+      'Sur la terrasse',
+      'Climatisation',
+      'WiFi gratuit'
+    ]
+  },
+  {
+    id: 'rouge',
+    name: 'Chambre Rouge',
+    description: 'Chambre spacieuse avec 3 lits simples ou lit double + simple, située sur la terrasse.',
+    longDescription: 'La Chambre Rouge, située sur la terrasse, offre une flexibilité d’accueil avec trois lits simples ou un lit double et un lit simple. Parfaite pour les familles ou groupes d’amis.',
+    image: chambreRougeSrc1,
+    gallery: [
+chambreRougeSrc2,
+chambreRougeSrc3,
+chambreRougeSrc4
+    ],
+    price: 140,
+    capacity: '3 personnes',
+    size: '30m²',
+    amenities: [
+      '3 lits simples ou lit double + lit simple',
+      'Située sur la terrasse',
+      'WiFi gratuit',
+      'Climatisation'
+    ]
+  }
+];
+
+const highlights = [
+  {
+    title: 'Charme Authentique',
+    description: 'Plongez dans l’univers de l’artisanat marocain avec des chambres décorées à la main, alliant tradition et élégance.',
+    icon: '🏺'
+  },
+  {
+    title: 'Bien-être et Modernité',
+    description: 'Savourez le confort d’équipements modernes (climatisation, literie premium, Wi-Fi) pensés pour votre bien-être.',
+    icon: '✨'
+  },
+  {
+    title: 'Vues à Couper le Souffle',
+    description: 'Admirez la médina animée ou les montagnes de l’Atlas depuis votre fenêtre ou votre terrasse privée.',
+    icon: '🌄'
+  },
+  {
+    title: 'Hospitalité Sur-Mesure',
+    description: 'Notre équipe attentionnée est disponible 24/7 pour vous offrir un service discret, chaleureux et personnalisé.',
+    icon: '👥'
+  }
+];
+---
+
+<Layout 
+  title="Nos Chambres" 
+  description="Découvrez nos chambres élégantes au style marocain, confort moderne et ambiance chaleureuse, au cœur de Marrakech."
+>
+  <!-- Hero section -->
+   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-black text-white">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src={imgSrc.src}
+        alt="Téléphone vintage marocain" 
+        class="w-full h-full object-cover opacity-50"
+      />
+    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-serif mb-4">Le charme discret de nos chambres</h1>
+        <p class="text-xl">Un confort moderne niché dans un décor marocain authentique, où chaque détail a été pensé pour vous offrir une expérience intime, apaisante et mémorable</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-serif mb-6">Un séjour de charme</h2>
+<p class="text-lg text-gray-700 mb-6">
+  Notre Riad vous accueille dans 8 chambres et suites, toutes climatisées et soigneusement décorées, mêlant le raffinement de l’artisanat marocain au confort contemporain. Chaque espace a été pensé comme un cocon de tranquillité, propice à la détente et à l’évasion.
+</p>
+<p class="text-gray-700">
+  Pour bien commencer la journée, un petit-déjeuner marocain traditionnel vous sera servi chaque matin, selon vos envies, dans la fraîcheur du patio ou avec vue sur la médina depuis notre terrasse panoramique.
+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights section -->
+  <section class="py-16 bg-cream-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 text-center">
+       <h2 class="section-title">Les Atouts de Nos Chambres</h2>
+<p class="text-lg text-gray-700 max-w-5xl mx-auto">
+  Un subtil équilibre entre authenticité marocaine, confort moderne et hospitalité sur mesure, pour un séjour inoubliable à Marrakech.
+</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-8xl mx-auto">
+        {highlights.map(highlight => (
+          <div class="text-center p-6 bg-white shadow-luxury hover:shadow-luxury-lg transition-all duration-300 rounded-sm">
+            <div class="text-4xl mb-4">{highlight.icon}</div>
+            <h3 class="text-xl font-medium mb-2">{highlight.title}</h3>
+            <p class="text-gray-600">{highlight.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms listing -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {rooms.map((room, index) => (
+          <div id={room.id} class="bg-white rounded-lg overflow-hidden shadow-lg fade-in-up">
+            <div class={`flex flex-col lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+              <div class="lg:w-1/2">
+                <div class="h-full relative">
+                  <img 
+                    src={room.image.src} 
+                    alt={room.name} 
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute bottom-0 left-0 bg-gold-400 text-white px-4 py-2">
+                    À partir de {room.price}€ / nuit
+                  </div>
+                </div>
+              </div>
+              
+              <div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-2xl font-serif font-medium mb-2">{room.name}</h3>
+                  <p class="text-lg text-gray-600 mb-4">{room.longDescription}</p>
+                  
+                  <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gold-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                      </svg>
+                      <span>{room.capacity}</span>
+                    </div>
+                    
+                  {false &&  <div class="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gold-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                      </svg>
+                      <span>{room.size}</span>
+                    </div>}
+                  </div>
+                  
+                  <div class="mb-6">
+                    <h4 class="text-lg font-medium mb-2">Équipements</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {room.amenities.slice(0, 6).map(amenity => (
+                        <li class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gold-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                          </svg>
+                          {amenity}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a href="/reservation" class="btn btn-primary">
+                    Réserver maintenant
+                  </a>
+                  <button class="btn btn-outline modal-trigger" data-room={room.id}>
+                    Voir plus de photos
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Room gallery modals -->
+  {rooms.map(room => (
+    <div id={`modal-${room.id}`} class="fixed inset-0 z-50 flex items-center justify-center hidden">
+      <div class="modal-overlay absolute inset-0 bg-black opacity-75"></div>
+      
+      <div class="modal-container bg-white w-11/12 md:max-w-3xl mx-auto rounded shadow-lg z-50 overflow-y-auto max-h-screen">
+        <div class="modal-content p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-serif">{room.name} - Galerie</h3>
+            <button class="modal-close">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <img src={room.image.src} alt={room.name} class="w-full h-64 object-cover rounded" />
+            {room.gallery.map(img => (
+              <img src={img.src} alt={`${room.name} détail`} class="w-full h-64 object-cover rounded" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+
+  <section class="py-16 bg-cream-50">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-title">Expérience Unique</h2>
+        <p class="text-lg text-gray-700 mb-12">
+          Chaque chambre de notre Riad est unique et raconte sa propre histoire à travers son architecture, 
+          sa décoration et son ambiance particulière.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="luxury-card p-6">
+            <div class="text-4xl mb-4">🏺</div>
+            <h3 class="text-xl font-medium mb-2">Artisanat Local</h3>
+            <p class="text-gray-600">
+              Chaque pièce de mobilier et de décoration a été soigneusement sélectionnée auprès d'artisans locaux.
+            </p>
+          </div>
+          
+          <div class="luxury-card p-6">
+            <div class="text-4xl mb-4">🌅</div>
+            <h3 class="text-xl font-medium mb-2">Vues Imprenables</h3>
+            <p class="text-gray-600">
+              Profitez de vues spectaculaires sur la médina ou l'Atlas depuis votre chambre ou terrasse privée.
+            </p>
+          </div>
+          
+          <div class="luxury-card p-6">
+            <div class="text-4xl mb-4">✨</div>
+            <h3 class="text-xl font-medium mb-2">Confort Moderne</h3>
+            <p class="text-gray-600">
+              Le charme traditionnel se marie parfaitement avec les équipements modernes pour votre confort.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-16 bg-cream-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-serif mb-4">Prêt à réserver votre séjour?</h2>
+        <p class="text-lg mb-8">Contactez-nous dès maintenant pour vérifier les disponibilités et bénéficier de nos meilleures offres.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/reservation" class="btn btn-primary">
+            Réserver maintenant
+          </a>
+          <a href="/contact" class="btn btn-outline">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animation au défilement
+    const animatedElements = document.querySelectorAll('.fade-in-up');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Gallery modals
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modalCloses = document.querySelectorAll('.modal-close');
+    const modalOverlays = document.querySelectorAll('.modal-overlay');
+    
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const roomId = trigger.getAttribute('data-room');
+        const modal = document.getElementById(`modal-${roomId}`);
+        if (modal) {
+          modal.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        }
+      });
+    });
+    
+    const closeModals = () => {
+      document.querySelectorAll('[id^="modal-"]').forEach(modal => {
+        modal.classList.add('hidden');
+      });
+      document.body.classList.remove('overflow-hidden');
+    };
+    
+    modalCloses.forEach(close => {
+      close.addEventListener('click', closeModals);
+    });
+    
+    modalOverlays.forEach(overlay => {
+      overlay.addEventListener('click', closeModals);
+    });
+    
+    // Close modals with Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModals();
+    });
+  });
+</script>
