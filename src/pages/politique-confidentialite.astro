@@ -1,4 +1,5 @@
 ---
+import { contactInfo } from '../constants';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -67,27 +68,16 @@ import Layout from '../layouts/Layout.astro';
           Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données contre tout accès, modification, divulgation ou destruction non autorisés.
         </p>
 
-        <h2>6. Vos droits</h2>
-        <p>
-          Vous disposez des droits suivants concernant vos données personnelles :
-        </p>
-        <ul>
-          <li>Droit d'accès</li>
-          <li>Droit de rectification</li>
-          <li>Droit à l'effacement</li>
-          <li>Droit à la limitation du traitement</li>
-          <li>Droit à la portabilité</li>
-          <li>Droit d'opposition</li>
-        </ul>
+      
 
-        <h2>7. Nous contacter</h2>
+        <h2>6. Nous contacter</h2>
         <p>
           Pour toute question concernant notre politique de confidentialité ou pour exercer vos droits, contactez-nous à :
         </p>
         <p>
-          Email : [adresse email]<br>
-          Téléphone : [numéro]<br>
-          Adresse : [adresse postale]
+          Email : {contactInfo[2].content}<br>
+          Téléphone : {contactInfo[1].content}<br>
+          Adresse : {contactInfo[0].content}
         </p>
 
         <h2>8. Modifications</h2>
@@ -96,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <p class="text-sm text-gray-600 mt-8">
-          Dernière mise à jour : [date]
+          Dernière mise à jour : 05/07/2025
         </p>
       </div>
     </div>

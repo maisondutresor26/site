@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {contactInfo} from '../constants'
+
 ---
 
 <Layout 
@@ -16,19 +18,19 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16">
     <div class="container mx-auto">
       <div class="max-w-3xl mx-auto prose prose-lg">
-        <h2>1. Informations légales</h2>
+        <h2>1. Informations <!-- légales --></h2>
         <p>
-          Raison sociale : [Nom de la société]<br>
+         <!--  Raison sociale : [Nom de la société]<br>
           Forme juridique : [Forme juridique]<br>
           Capital social : [Montant]<br>
           Siège social : [Adresse complète]<br>
           RCS : [Numéro]<br>
-          N° TVA intracommunautaire : [Numéro]<br>
-          Téléphone : [Numéro]<br>
-          Email : [Adresse email]
+          N° TVA intracommunautaire : [Numéro]<br> -->
+          Téléphone : {contactInfo[1].content}<br>
+          Email : {contactInfo[2].content}
         </p>
 
-        <h2>2. Directeur de la publication</h2>
+    <!--     <h2>2. Directeur de la publication</h2>
         <p>[Nom du directeur de publication]</p>
 
         <h2>3. Hébergeur du site</h2>
@@ -36,24 +38,19 @@ import Layout from '../layouts/Layout.astro';
           [Nom de l'hébergeur]<br>
           [Adresse complète]<br>
           [Téléphone]
-        </p>
+        </p> -->
 
-        <h2>4. Propriété intellectuelle</h2>
+        <h2>2. Propriété intellectuelle</h2>
         <p>
-          L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
+          Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
         </p>
 
-        <h2>5. Liens hypertextes</h2>
+        <h2>3. Liens hypertextes</h2>
         <p>
           Le site peut contenir des liens hypertextes vers d'autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le site. Ces liens sont établis de bonne foi et le Riad Marrakech ne peut être tenu responsable des changements de contenu ultérieurs de ces sites.
         </p>
 
-        <h2>6. Données personnelles</h2>
-        <p>
-          Les informations recueillies sur ce site sont traitées selon les dispositions de la loi du 6 janvier 1978. Vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour l'exercer, contactez-nous à l'adresse indiquée ci-dessus.
-        </p>
-
-        <h2>7. Droit applicable</h2>
+        <h2>4. Droit applicable</h2>
         <p>
           Les présentes mentions légales sont soumises au droit marocain. En cas de litige, les tribunaux marocains seront seuls compétents.
         </p>

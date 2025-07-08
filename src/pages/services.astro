@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import heroBgSrc from '../assets/services-hero-bg.jpg'
 import piscineImg from '../assets/riad-home-hero.png'
-import hammamImg from '../assets/hammam.jpg'
 import restaurantImg from '../assets/restaurant.jpg'
+import petitDejImg from '../assets/restaurant.jpg'
+import dinnerImg from '../assets/dinner-prive.jpg'
 
 const services = [
   {
@@ -14,18 +15,18 @@ const services = [
     image: piscineImg.src
   },
   {
-    id: 'hammam',
-    title: 'Hammam & Spa',
-    description: 'Découvrez les rituels de bien-être traditionnels marocains dans notre hammam authentique',
-    longDescription: 'Notre hammam traditionnel vous invite à découvrir les rituels ancestraux de purification et de relaxation. Nos thérapeutes expérimentés proposent une gamme complète de soins utilisant des produits naturels locaux comme l\'huile d\'argan et le savon noir.',
-    image: hammamImg.src
+    id: 'petit-dejeuner',
+    title: 'Petit Déjeuner',
+    description: 'Commencez votre journée avec un authentique petit déjeuner marocain préparé avec des produits frais et locaux',
+    longDescription: 'Notre petit déjeuner traditionnel vous propose une sélection des meilleurs produits marocains. Savourez des msemen (crêpes feuilletées), du pain maison, des confitures artisanales, du miel d\'argan, des amandes grillées et une sélection de thés marocains. Tous nos produits sont frais, locaux et préparés chaque matin.',
+    image: petitDejImg.src
   },
   {
-    id: 'restaurant',
-    title: 'Restaurant',
-    description: 'Savourez une cuisine marocaine raffinée, préparée avec des produits frais et locaux',
-    longDescription: 'Notre restaurant propose une cuisine marocaine authentique et raffinée, élaborée par notre chef à partir de produits frais du marché. Dégustez nos spécialités dans le patio, sur la terrasse panoramique ou dans l\'intimité de votre chambre.',
-    image: restaurantImg.src
+    id: 'diner-prive',
+    title: 'Dîner Privé',
+    description: 'Une expérience gastronomique exclusive dans une atmosphère intimiste et élégante',
+    longDescription: 'Notre Dîner Privé vous offre une expérience culinaire personnalisée dans un cadre raffiné et réservé uniquement à vos invités. Notre chef élabore un menu sur mesure à partir des meilleurs produits locaux et saisonniers, accompagné d\'une sélection de vins marocains et internationaux.',
+    image: dinnerImg.src
   }
 ];
 
