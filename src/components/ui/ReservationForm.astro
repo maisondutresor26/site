@@ -2,6 +2,12 @@
 ---
 
 <form class="bg-white rounded-lg shadow-md p-6 md:p-8" id="reservation-form">
+  {/* Security verification field - invisible to users */}
+  <div class="verification-field" style="display: none; visibility: hidden; position: absolute; left: -9999px;">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="form-group">
       <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">
@@ -151,6 +157,8 @@
     </button>
   </div>
   
+  <div id="form-status" class="mt-4 hidden"></div>
+  
   <p class="mt-4 text-sm text-gray-600 italic">
     <span class="text-terracotta-500">*</span> Champs obligatoires. Cette demande ne constitue pas une réservation définitive. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité et finaliser votre réservation.
   </p>
@@ -158,22 +166,23 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('reservation-form');
+    const form = document.getElementById('reservation-form') as HTMLFormElement;
+    const formStatus = document.getElementById('form-status');
     
     // Définir les dates minimales pour check-in (aujourd'hui) et check-out (demain)
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
     
-    const formatDate = (date) => {
+    const formatDate = (date: Date): string => {
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
       const day = String(date.getDate()).padStart(2, '0');
       return `${year}-${month}-${day}`;
     };
     
-    const checkInInput = document.getElementById('check-in');
-    const checkOutInput = document.getElementById('check-out');
+    const checkInInput = document.getElementById('check-in') as HTMLInputElement;
+    const checkOutInput = document.getElementById('check-out') as HTMLInputElement;
     
     if (checkInInput && checkOutInput) {
       checkInInput.min = formatDate(today);
@@ -196,32 +205,108 @@
     form?.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Simuler l'envoi du formulaire
-      const submitButton = form.querySelector('button[type="submit"]');
+      const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const formStatus = document.getElementById('form-status');
+      
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Envoi en cours...';
         
-        // Simuler un délai de traitement
-        setTimeout(() => {
-          // Réinitialiser le formulaire
+        // Get security verification field value
+        const securityField = document.getElementById('website') as HTMLInputElement;
+        const honeypotValue = securityField?.value || '';
+        
+        // Client-side security validation - if filled, simulate success but don't send
+        if (honeypotValue) {
+          console.log('Automated submission detected - security field was filled');
+          
+          // Simulate success after a short delay
+          setTimeout(() => {
+            // Reset form
+            form.reset();
+            
+            // Show success message (fake for bots)
+            if (formStatus) {
+              formStatus.className = 'mt-4 p-4 bg-green-100 text-green-800 rounded-md';
+              formStatus.textContent = 'Votre demande de réservation a été envoyée avec succès. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité.';
+              formStatus.classList.remove('hidden');
+            }
+            
+            // Reset button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Demander une réservation';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+              if (formStatus) {
+                formStatus.classList.add('hidden');
+              }
+            }, 5000);
+          }, 1000);
+          
+          return; // Don't proceed with the actual submission
+        }
+        
+        // Proceed with real submission for human users
+        const formData = {
+          formType: 'reservation',
+          website: honeypotValue, // Security verification field
+          firstName: (document.getElementById('first-name') as HTMLInputElement)?.value || '',
+          userLastName: (document.getElementById('last-name') as HTMLInputElement)?.value || '', // Renamed to avoid confusion with honeypot
+          email: (document.getElementById('email') as HTMLInputElement)?.value || '',
+          phone: (document.getElementById('phone') as HTMLInputElement)?.value || '',
+          roomType: (document.getElementById('room-type') as HTMLSelectElement)?.value || '',
+          guests: (document.getElementById('guests') as HTMLSelectElement)?.value || '',
+          checkIn: (document.getElementById('check-in') as HTMLInputElement)?.value || '',
+          checkOut: (document.getElementById('check-out') as HTMLInputElement)?.value || '',
+          specialRequests: (document.getElementById('special-requests') as HTMLTextAreaElement)?.value || ''
+        };
+        
+        // Send data to API endpoint
+        fetch('/api', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Reset form
           form.reset();
           
-          // Afficher un message de succès
-          const successMessage = document.createElement('div');
-          successMessage.className = 'mt-4 p-4 bg-green-100 text-green-800 rounded-md';
-          successMessage.textContent = 'Votre demande de réservation a été envoyée avec succès. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité.';
-          form.appendChild(successMessage);
+          // Show success message
+          if (formStatus) {
+            formStatus.className = 'mt-4 p-4 bg-green-100 text-green-800 rounded-md';
+            formStatus.textContent = 'Votre demande de réservation a été envoyée avec succès. Nous vous contacterons dans les 24 heures pour confirmer la disponibilité.';
+            formStatus.classList.remove('hidden');
+          }
           
-          // Réactiver le bouton
+          // Reset button
           submitButton.disabled = false;
           submitButton.textContent = 'Demander une réservation';
           
-          // Supprimer le message après un certain temps
+          // Hide message after 5 seconds
           setTimeout(() => {
-            successMessage.remove();
+            if (formStatus) {
+              formStatus.classList.add('hidden');
+            }
           }, 5000);
-        }, 1500);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          
+          // Show error message
+          if (formStatus) {
+            formStatus.className = 'mt-4 p-4 bg-red-100 text-red-800 rounded-md';
+            formStatus.textContent = 'Une erreur est survenue lors de l\'envoi de votre demande. Veuillez réessayer plus tard.';
+            formStatus.classList.remove('hidden');
+          }
+          
+          // Reset button
+          submitButton.disabled = false;
+          submitButton.textContent = 'Demander une réservation';
+        });
       }
     });
   });
